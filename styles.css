@@ -10,7 +10,11 @@
     --font-tech: 'Rajdhani', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-deep);
@@ -34,7 +38,10 @@ header {
 /* Warp Speed Overlay Effect */
 .warp-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(circle, transparent 20%, #000 150%);
     box-shadow: inset 0 0 100px #000;
     z-index: 1;
@@ -71,14 +78,22 @@ h1 {
 .status-bar {
     display: flex;
     justify-content: space-around;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     padding-top: 15px;
     font-family: var(--font-display);
     font-size: 0.9rem;
 }
 
-.blink { animation: blinker 1.5s linear infinite; color: var(--neon-red); }
-@keyframes blinker { 50% { opacity: 0; } }
+.blink {
+    animation: blinker 1.5s linear infinite;
+    color: var(--neon-red);
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
 
 /* --- DESTINATIONS (SEMANTIC GRID) --- */
 #destinations {
@@ -105,7 +120,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
 }
 
@@ -138,7 +153,9 @@ figure img {
     transition: transform 0.5s;
 }
 
-article:hover figure img { transform: scale(1.1); }
+article:hover figure img {
+    transform: scale(1.1);
+}
 
 figcaption {
     position: absolute;
@@ -212,7 +229,8 @@ table {
     /* color: var(--neon-cyan); */
     color: rgb(0, 0, 0);
     text-transform: uppercase;
-    font-family: 'Courier New', monospace; /* Tech look */
+    font-family: 'Courier New', monospace;
+    /* Tech look */
 }
 
 caption {
@@ -237,22 +255,54 @@ td {
 }
 
 /* Status Lights */
-.status-go { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); }
-.status-wait { color: var(--neon-orange); }
-.status-delay { color: yellow; animation: blinker 1s infinite; }
-.status-stop { color: var(--neon-red); font-weight: bold; }
+.status-go {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.status-wait {
+    color: var(--neon-orange);
+}
+
+.status-delay {
+    color: yellow;
+    animation: blinker 1s infinite;
+}
+
+.status-stop {
+    color: var(--neon-red);
+    font-weight: bold;
+}
 
 /* Hologram Scanline Animation */
 .hologram-overlay::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
     background: rgba(0, 243, 255, 0.5);
     box-shadow: 0 0 15px var(--neon-cyan);
     animation: scan 3s linear infinite;
     pointer-events: none;
 }
-@keyframes scan { 0% { top: 0; opacity: 0; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+@keyframes scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
 
 /* --- BOOKING (KIOSK FORM) --- */
 #booking {
@@ -266,13 +316,16 @@ td {
 }
 
 .kiosk-interface {
+    position: relative;
+    top: 3px;
+    left: 2px;
     background: rgba(10, 10, 10, 0.9);
     border: 3px solid #333;
-    border-radius: 30px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 28px;
     width: 100%;
-    max-width: 740px;
-    box-shadow: 0 0 60px rgba(0,0,0,0.9);
+    max-width: 687px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
     transform: perspective(1000px) rotateX(10deg);
     margin-top: -300px;
 }
@@ -310,7 +363,8 @@ label {
     letter-spacing: 1px;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     background: #000;
     border: 1px solid #444;
@@ -323,7 +377,8 @@ input, select {
 }
 
 /* Cool Focus Effect */
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: var(--neon-cyan);
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
     color: var(--neon-cyan);
